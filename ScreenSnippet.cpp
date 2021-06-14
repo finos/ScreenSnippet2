@@ -126,7 +126,7 @@ static BOOL CALLBACK closeExistingInstance( HWND hwnd, LPARAM lparam ) {
     return TRUE;
 }
 
-
+/*
 typedef void (WINAPI * RtlGetVersion_FUNC) (OSVERSIONINFOEXW *);
 
 
@@ -170,7 +170,7 @@ BOOL GetVersion(OSVERSIONINFOEX * os) {
     FreeLibrary(hMod);
     return TRUE;
 }
-
+*/
 
 int wmain( int argc, wchar_t* argv[] ) {
 
@@ -246,6 +246,7 @@ int wmain( int argc, wchar_t* argv[] ) {
     HBITMAP snippet = NULL;
     float snippetScale = 1.0f;
     
+/*
     BOOL isOldWindows = FALSE;
     OSVERSIONINFOEX osvi;
     memset( &osvi, 0, sizeof( osvi ) );
@@ -277,6 +278,7 @@ int wmain( int argc, wchar_t* argv[] ) {
             }
         }
     } else { // Windows SnippingTool is not available, so use our custom implementation
+*/
         // Let the user select a region on the screen
         RECT region;
         if( selectRegion( &region ) == EXIT_SUCCESS ) { 
@@ -295,7 +297,7 @@ int wmain( int argc, wchar_t* argv[] ) {
             snippet = grabSnippet( topLeft, bottomRight );
             snippetScale = getSnippetScaling( topLeft, bottomRight );
         }
-    }
+//    }
     
     if( snippet ) {
         // Let the user annotate the screen snippet with drawings
