@@ -135,3 +135,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+*.exe
+*.aps
+*.res
+*.obj
+test_image.png

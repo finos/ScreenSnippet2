@@ -4,45 +4,35 @@ Badges go here (see [shields.io](https://shields.io/), for examples).
 
 # ScreenSnippet2
 
-Short blurb about what your project does.
+Screen snippet tool for SDA.
 
-## Installation
+## Dev requirements
+OS: Windows
+Visual Studio 2019 Enterprise edition
+NodeJS v12  
 
-OS X & Linux:
+## Execution
 
-```sh
-npm install my-crazy-module --save
-```
+To execute the screen snippet tool, you'll need to open the Visual Studio Command prompt (Tools > Command prompt you added in Setup step) and run "npm run build".
+This command will generate ```ScreenSnippet.exe``` file.
 
-Windows:
-
-```sh
-edit autoexec.bat
-```
-
-## Usage example
-
-A few motivating and useful examples of how your project can be used. Spice this up with code blocks and potentially screenshots / videos ([LiceCap](https://www.cockos.com/licecap/) is great for this kind of thing).
-
-_For more examples and usage, please refer to the [Wiki][wiki]._
-
-## Development setup
-
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
+You can run this exe file in command line as follow:
 
 ```sh
-make install
-npm test
+> ScreenSnippet.exe --no-annotate
 ```
 
-## Roadmap
+You will run screen snippet tool without annotation.
+After capturing the screenshot, you will find a generated .png file.
 
-List the roadmap steps; alternatively link the Confluence Wiki page where the project roadmap is published.
+## Debugging
 
-1. Item 1
-2. Item 2
-3. ....
-
+Generate pdb file and execute the following in Visual Studio Command prompt:
+```
+>  cl ScreenSnippet.cpp /Zi
+> devenv ScreenSnippet.exe
+```
+It will open Visual Studio. You just need to put your breakpoints and click on "Start". You will need to add "--no-annotate" argument.
 ## Contributing
 
 1. Fork it (<https://github.com/symphonyoss/ScreenSnippet2/fork>)
